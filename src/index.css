@@ -1,0 +1,163 @@
+:root {
+  --bg-color: #e0e5ec;
+  --primary-gold: #ffd700;
+  --primary-gold-dark: #ccac00;
+  --secondary-white: #ffffff;
+  --text-dark: #333333;
+  --shadow-light: rgba(255, 255, 255, 0.7);
+  --shadow-dark: rgba(163, 177, 198, 0.5);
+  
+  --neu-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+  --neu-shadow-inset: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
+  --neu-shadow-sm: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+  --neu-shadow-inset-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* React Bootstrap overrides */
+.navbar, .card, .btn, .form-control {
+  background-color: var(--bg-color) !important;
+  border: none !important;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+
+/* Neumorphic Utilities */
+.neu-box {
+  background-color: var(--bg-color);
+  box-shadow: var(--neu-shadow);
+  border-radius: 15px;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.neu-btn {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: bold;
+  box-shadow: var(--neu-shadow-sm);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.neu-btn:hover {
+  box-shadow: var(--neu-shadow-inset-sm);
+  color: var(--primary-gold-dark);
+}
+
+.neu-btn-primary {
+  background-color: var(--primary-gold);
+  color: #000;
+  box-shadow: 5px 5px 10px rgba(204, 172, 0, 0.4), -5px -5px 10px rgba(255, 255, 100, 0.5);
+}
+
+.neu-btn-primary:hover {
+  box-shadow: inset 5px 5px 10px rgba(204, 172, 0, 0.4), inset -5px -5px 10px rgba(255, 255, 100, 0.5);
+  color: #000;
+}
+
+.neu-btn-secondary {
+  background-color: var(--secondary-white);
+  color: var(--text-dark);
+}
+
+.neu-input {
+  background-color: var(--bg-color) !important;
+  border: none !important;
+  border-radius: 15px !important;
+  box-shadow: var(--neu-shadow-inset) !important;
+  padding: 12px 20px !important;
+  color: var(--text-dark) !important;
+}
+
+.neu-input:focus {
+  outline: none !important;
+  box-shadow: var(--neu-shadow-inset-sm) !important;
+}
+
+.neu-card {
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  box-shadow: var(--neu-shadow);
+  border: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.neu-card .card-body {
+  padding: 25px;
+}
+
+.neu-nav {
+  box-shadow: var(--neu-shadow-sm);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 30px;
+  padding: 15px 0;
+}
+
+.neu-nav-link {
+  color: var(--text-dark) !important;
+  font-weight: bold;
+  padding: 8px 15px !important;
+  border-radius: 10px;
+  transition: all 0.2s;
+  margin: 0 5px;
+}
+
+.neu-nav-link:hover, .neu-nav-link.active {
+  box-shadow: var(--neu-shadow-inset-sm);
+  color: var(--primary-gold-dark) !important;
+}
+
+.neu-title {
+  color: var(--primary-gold-dark);
+  text-shadow: 2px 2px 4px var(--shadow-light);
+  font-weight: bold;
+}
+
+.neu-progress {
+  background-color: var(--bg-color);
+  box-shadow: var(--neu-shadow-inset-sm);
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.neu-progress-bar {
+  background-color: var(--primary-gold);
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: var(--neu-shadow-sm);
+  transition: width 0.3s ease;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Page specific layouts */
+.page-container {
+  min-height: 80vh;
+  padding-bottom: 40px;
+}
+
+.content-sidebar {
+  border-right: 2px solid rgba(255,255,255,0.2);
+}
