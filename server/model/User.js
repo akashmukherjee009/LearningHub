@@ -14,6 +14,37 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+      select: false,
+    },
+    role: {
+      type: String,
+      enum: ['admin', 'student'],
+      default: 'student',
+    },
+    collegeName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    class: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    address: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    city: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
   {
     timestamps: true,

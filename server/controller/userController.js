@@ -18,7 +18,27 @@ const createUser = async (req, res, next) => {
   }
 };
 
+const loginUser = async (req, res, next) => {
+  try {
+    const loginData = await userService.loginUser(req.body);
+    res.json(loginData);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const updateUser = async (req, res, next) => {
+  try {
+    const user = await userService.updateUser(req.user.id, req.body);
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
 export {
   getUsers,
   createUser,
+  loginUser,
+  updateUser,
 };
